@@ -23,7 +23,6 @@ apps:
       - network-control
       - firewall-control
       - dns-control
-      - home  # Allows access to home directories if needed
   tailscaled:
     command: bin/tailscaled --statedir $SNAP_DATA
     daemon: simple
