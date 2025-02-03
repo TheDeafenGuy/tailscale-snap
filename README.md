@@ -9,10 +9,6 @@ I also used AI to fix some of the snapcraft.yaml, because I am inexperienced wit
 Updates to the snapcraft.yaml for newer versions of Tailscale should not be needed because this version of Tailscale has a built-in updater, so theoretically, it should be fine.
 The version of Tailscale this snap comes with is usually the latest version, as I try my best to update the snap to the newer version of tailscale as soon as possible.
 
-<a href="https://snapcraft.io/tailscale-snap2">
-  <img alt="tailscale-snap2" src="https://snapcraft.io/tailscale-snap2/badge.svg" />
-</a>
-
 <h1>Updating</h1>
 
 I usually try to update the snap to the latest version of Tailscale within one day of an update to Tailscale itself.
