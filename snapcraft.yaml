@@ -32,7 +32,6 @@ apps:
       - network
       - network-bind
       - network-control
-      - system-observe  # Allows observing system state, useful for debugging
 parts:
   tailscale:
     source: https://github.com/tailscale/tailscale.git
