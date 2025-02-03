@@ -1,4 +1,4 @@
-name: tailscale-snap2
+name: tailscale-snap
 base: core20
 version: '1.80.0'
 grade: stable
