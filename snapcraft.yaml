@@ -22,7 +22,6 @@ apps:
       - network-bind
       - network-control
       - firewall-control
-      - dns-control
   tailscaled:
     command: bin/tailscaled --statedir $SNAP_DATA
     daemon: simple
