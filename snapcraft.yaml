@@ -2,7 +2,7 @@ name: tailscale-snap2
 base: core20
 version: '1.80.0'
 grade: stable
-confinement: devmode
+confinement: strict  # Changed from devmode to strict
 summary: The easiest, most secure way to use WireGuard and 2FA
 description: |
   A secure network that just works Zero config VPN.
@@ -15,8 +15,15 @@ architectures:
   - build-on: armhf
 
 apps:
-  tailscale-snap2:
+  tailscale:
     command: bin/tailscale
+    plugs:
+      - network
+      - network-bind
+      - network-control
+      - firewall-control
+      - dns-control
+      - home  # Allows access to home directories if needed
   tailscaled:
     command: bin/tailscaled --statedir $SNAP_DATA
     daemon: simple
@@ -25,6 +32,7 @@ apps:
       - network
       - network-bind
       - network-control
+      - system-observe  # Allows observing system state, useful for debugging
 parts:
   tailscale:
     source: https://github.com/tailscale/tailscale.git
@@ -37,4 +45,4 @@ parts:
     stage-packages:
       - ca-certificates
     organize:
-      tailscaled.service: snap/systemd/tailscaled.service  
+      tailscaled.service: snap/systemd/tailscaled.service
